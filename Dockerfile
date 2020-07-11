@@ -13,4 +13,4 @@ RUN mkdir /src
 ADD ./src /src
 WORKDIR /src
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["migrate"]
+CMD ["runserver"]

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-if [ "$1" = 'migrate' ]; then
-    python manage.py migrate
+if [ "$1" = 'runserver' ]; then
+    python manage.py migrate && python manage.py runserver 0.0.0.0:8000
 fi
 
 exec "$@"
