@@ -17,7 +17,7 @@ Place your GCP credentials into `keys/gcp.json`
 ### Build and Run
 ```
 docker build -t jksimoniii .
-docker run -p 8000:8000 --env-file .env jksimoniii python manage.py runserver
+docker run -p 8000:8000 --env-file .env jksimoniii python manage.py runserver 0.0.0.0:8000
 ```
 
 ## How to Use
@@ -40,7 +40,7 @@ Here's an example, filtering BigQuery’s public BLS dataset for `?year=2018`
 RESOURCE=bigquery-public-data
 DATASET=bls
 TABLE=unemployment_cps
-curl -X GET 'http://localhost:8000/api/bigquery/$RESOURCE/$DATASET/tables/$TABLE/?year=2018' | jq
+curl -X GET "http://localhost:8000/api/bigquery/$RESOURCE/$DATASET/tables/$TABLE/?year=2018" | jq
 {
   "url": "http://localhost:8000/api/bigquery/jobs/f5e2617b-55c9-48f1-9439-3daef4c3bbcd/",
   "finished": false,
