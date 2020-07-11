@@ -17,7 +17,7 @@ Place your GCP credentials into `keys/gcp.json`
 ### Build and Run
 ```
 docker build -t jksimoniii .
-docker run -p 8000:8000
+docker run -p 8000:8000 --env-file .env jksimoniii python manage.py runserver
 ```
 
 ## How to Use
